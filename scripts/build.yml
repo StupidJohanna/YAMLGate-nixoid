@@ -1,0 +1,28 @@
+nixoid-entrance:
+  stages:
+    - download
+    - update
+    - preinstall
+    - install
+
+download:
+  run:
+    - git clone https://github.com/stupidjohanna/yamlgate
+    - cd yamlgate
+    - git fetch upstream
+    - git pull
+
+update:
+  run:
+    - make update
+
+preinstall:
+  run:
+    - make install_reqs
+
+
+install:
+  run:
+    - sudo make sysinstall
+    
+    
